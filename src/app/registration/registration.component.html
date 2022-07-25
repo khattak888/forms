@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col">
+        <form #registrationForm="ngForm" (ngSubmit)="submitForm(registrationForm)">
+            <h1>Template Driven Form</h1>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name: </label>
+              <input type="email" class="form-control" id="name" name="name" ngModel>
+            </div>
+           
+            <div class="mb-3">
+                <label for="email" class="form-label">Email: </label>
+                <input type="email" class="form-control" id="email" name="email" ngModel>
+              </div>
+
+              <div class="mb-3">
+                <label for="phone" class="form-label">Phone: </label>
+                <input type="tel" class="form-control" id="phone" name="phone" ngModel>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label" for="topic">Topic:</label>
+                <select class="form-select" id="topic" name="select" ngModel>
+                    <option *ngFor="let topic of topics">{{topic}}</option>
+                </select>
+
+              </div>
+
+           <div class="mb-3">
+            <label class="form-label">Time:</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="time" ngModel id="timeMorning" value="Morning">
+                <label class="form-check-label" for="timeMorning">Morning</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="time" id="timeEvening" value="Evening" ngModel>
+                <label class="form-check-label" for="timeEvening">Evening</label>
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="subscribe" name="subscribe" ngModel>
+                <label class="form-check-label" for="subscribe">Subscribe</label>
+              </div>
+           </div>
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+</div>
+
+
